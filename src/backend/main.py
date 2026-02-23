@@ -8,10 +8,11 @@ def main(subject, start_date, method, calendar_id):
 
     creds = load_or_create_token_file()
 
-    spaced_repetition = SpacedRepetition(method, start_date)
-    review_dates = spaced_repetition.get_review_dates()
+    spaced_repetition = SpacedRepetition(method)
+    review_dates = spaced_repetition.get_review_dates(start_date)
     calendar_entries = Calendar(creds)
 
     for date_val in review_dates:
         event_body = create_all_day_event_body(subject, date_val)
         calendar_entries.create_all_day_event(calendar_id, event_body)
+
