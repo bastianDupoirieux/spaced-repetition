@@ -2,7 +2,7 @@ from googleapiclient.discovery import build
 
 from constants.api import google_calendar_api_name, google_calendar_api_version
 
-class CalendarSpacedRepetition:
+class Calendar:
 
     def __init__(self, credentials):
         self.credentials = credentials

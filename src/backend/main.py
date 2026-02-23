@@ -1,4 +1,4 @@
-from services.calendar_entries import CalendarSpacedRepetition
+from services.calendar_entries import Calendar
 from services.auth import load_or_create_token_file
 from services.spaced_repetition import SpacedRepetition
 
@@ -10,7 +10,7 @@ def main(subject, start_date, method, calendar_id):
 
     spaced_repetition = SpacedRepetition(method, start_date)
     review_dates = spaced_repetition.get_review_dates()
-    calendar_entries = CalendarSpacedRepetition(creds)
+    calendar_entries = Calendar(creds)
 
     for date_val in review_dates:
         event_body = create_all_day_event_body(subject, date_val)
