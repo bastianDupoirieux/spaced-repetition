@@ -1,6 +1,6 @@
 import datetime
 
-def create_all_day_event_body(subject: str, description: str, start_date: datetime.date, end_date: datetime.date) -> dict:
+def create_all_day_event_body(subject: str, start_date: datetime.date, description=None) -> dict:
     return {
         "summary": f"Review: {subject}",
         "description": description,
@@ -8,6 +8,6 @@ def create_all_day_event_body(subject: str, description: str, start_date: dateti
             "date": start_date.isoformat()
         },
         "end": {
-            "date": end_date.isoformat()
+            "date": start_date.isoformat()
         }
     }

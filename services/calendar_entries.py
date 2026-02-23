@@ -9,12 +9,11 @@ class CalendarSpacedRepetition:
     def __init__(self, credentials):
         self.credentials = credentials
 
-        service = build('calendar', 'v3', credentials=credentials)
+        self.service = build('calendar', 'v3', credentials=credentials)
 
     def list_calendars(self):
         return self.service.calendarList().list().execute()
 
     def create_all_day_event(self, calendar_id, event):
         self.service.events().insert(calendarId=calendar_id, body=event).execute()
-    
     
