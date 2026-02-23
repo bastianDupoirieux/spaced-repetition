@@ -1,15 +1,13 @@
 from googleapiclient.discovery import build
 
-from services.auth import load_or_create_token_file
-
-from utils.calendar_events import create_all_day_event_body
+from constants.api import google_calendar_api_name, google_calendar_api_version
 
 class CalendarSpacedRepetition:
 
     def __init__(self, credentials):
         self.credentials = credentials
 
-        self.service = build('calendar', 'v3', credentials=credentials)
+        self.service = build(google_calendar_api_name, google_calendar_api_version, credentials=credentials)
 
     def list_calendars(self):
         return self.service.calendarList().list().execute()
