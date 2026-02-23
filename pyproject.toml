@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name="spaced-repetition"
+description="Spaced repetition application, allowing to set dates for repetition based on different methods"
+readme="README.md"
+license="Apache-2.0"
+version="0.1.0"
+requires-python=">=3.11"
+dependencies=[
+    "google-api-core>=2.30.0",
+    "google-api-python-client>=2.190.0",
+    "google-auth>=2.48.0",
+    "google-auth-httplib2>=0.3.0",
+    "pydantic>=2.12.5"
+]
+authors=[
+    {name="Bastian Dupoirieux"}
+]
