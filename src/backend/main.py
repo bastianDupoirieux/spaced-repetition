@@ -1,5 +1,3 @@
-import datetime
-
 from services.calendar_entries import Calendar
 from services.auth import load_or_create_token_file
 from services.spaced_repetition import SpacedRepetition
@@ -18,5 +16,3 @@ def main(subject, start_date, method, calendar_id):
         event_body = create_all_day_event_body(subject, date_val)
         calendar_entries.create_all_day_event(calendar_id, event_body)
 
-if __name__ == "__main__":
-    main("physics", datetime.date.today(), "leitner_method", "anonymsozialemedien@gmail.com")
